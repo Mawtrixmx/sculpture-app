@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sculpture Gallery</title>
+</head>
+<body>
+    <h2>Your Sculptures</h2>
+    {% for sculpture in sculptures %}
+        <div>
+            <img src="{{ sculpture.image.url }}" alt="{{ sculpture.animal_type }}" width="200">
+            <p>Animal: {{ sculpture.animal_type }}</p>
+            <p>Price: ${{ sculpture.price }}</p>
+            <p>Code: {{ sculpture.unique_code }}</p>
+        </div>
+    {% endfor %}
+    <a href="{% url 'sculptures:upload' %}">Upload New Sculpture</a>
+</body>
+</html>
